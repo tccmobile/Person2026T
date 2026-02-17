@@ -1,0 +1,7 @@
+# Compiled binary
+person_demo
+
+# Other compiled files
+*.o
+*.out
+*.exe
