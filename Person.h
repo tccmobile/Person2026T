@@ -35,7 +35,7 @@ class Person {
      friend std::ostream & operator<<(std::ostream &os, const Person &obj) {
          return os
                 << obj.name << " is "
-                << obj.age << " years old.";
+                << obj.age << " years old. Their nickname is " << obj.nickName;
      }
 };
 

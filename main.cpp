@@ -20,16 +20,13 @@ int main() {
     Person* personPtr3 = new Person("Fred Thomas", 37,"Grumpy");
 
     personPtr->setName("Tommy Jones");
-    cout << personPtr->getName() << endl;
-    cout <<personPtr->getNickName() << endl;
+    cout << *personPtr << endl;
 
     personPtr3 -> hasBirthday();
-    cout << personPtr3->getAge() << endl;
-    cout << personPtr3->getNickName() << endl;
+    cout << *personPtr3 << endl;
 
     personPtr -> setNickName("Wimpy");
-    cout << personPtr->getName() << endl;
-    cout <<personPtr->getNickName() << endl;
+    cout << *personPtr << endl;
 
     cout<<one<<endl;
     getOld(one);
@@ -37,18 +34,18 @@ int main() {
 
 
     cout<<"Assignment overload: "<<endl;
-    cout<<three<<" "<<three.getNickName()<<endl;
-    cout<<one<<" "<<one.getNickName()<<endl;
+    cout<<three<<endl;
+    cout<<four<<endl;
 
-    one.setNickName("Shorty");
-    cout<<three<<" "<<three.getNickName()<<endl;
-    cout<<one<<" "<<one.getNickName()<<endl;
+    four.setNickName("Shorty");
+    cout<<three<<endl;
+    cout<<four<<endl;
 
 
     delete personPtr;
     delete personPtr2;
     delete personPtr3;
-    //cout<< *personPtr << endl;
+    
 
 
 

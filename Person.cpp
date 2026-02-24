@@ -3,8 +3,9 @@
 //
 
 #include "Person.h"
-
+#include <cstring>
 #include <iostream>
+using namespace std;
 
 int Person::population = 0;
 
@@ -95,4 +96,5 @@ Person& Person::operator=(const Person &person) {
         nickName = new char[strlen(person.nickName)];
         strcpy(nickName, person.nickName);
     }
+    return *this;
 }
