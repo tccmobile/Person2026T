@@ -3,28 +3,54 @@
 using namespace std;
 
 
+void getOld(Person oldPerson) {
+    for (int i = 0; i < 10; ++i) {
+        oldPerson.hasBirthday();
+    }
+    cout << oldPerson << endl;
+}
 int main() {
-    cout<<"Number of persons: "<<Person::getPopulation()<<endl;
     Person one; // default constructor
-    cout<<"Number of persons: "<<Person::getPopulation()<<endl;
     Person two("Tom Jones", 23);
-    cout<<"Number of persons: "<<Person::getPopulation()<<endl;
+    Person three("Mary Todd", 73,"Happy");
+    Person four("Abraham", 75,"tall");
+    four = three;
+    Person* personPtr = new Person();
+    Person* personPtr2 = new Person("Kim Turner",56);
+    Person* personPtr3 = new Person("Fred Thomas", 37,"Grumpy");
 
-    cout<<one.getName()<<" is "<<one.getAge()<<" years old."<<endl;
-    cout<<two.getName()<<" is "<<two.getAge()<<" years old."<<endl;
+    personPtr->setName("Tommy Jones");
+    cout << personPtr->getName() << endl;
+    cout <<personPtr->getNickName() << endl;
 
-    one.setName("Sue Cook");
-    one.setAge(-65);
-    cout<<"\nTesting setters:"<<endl;
-    cout<<one.getName()<<" is "<<one.getAge()<<" years old."<<endl;
+    personPtr3 -> hasBirthday();
+    cout << personPtr3->getAge() << endl;
+    cout << personPtr3->getNickName() << endl;
 
-    cout<<"\nTesting mutators:"<<endl;
-    two.hasBirthday();
-    cout<<two.getName()<<" is "<<two.getAge()<<" years old."<<endl;
+    personPtr -> setNickName("Wimpy");
+    cout << personPtr->getName() << endl;
+    cout <<personPtr->getNickName() << endl;
 
-    cout<<"\nTesting overloaded <<"<<endl;
     cout<<one<<endl;
-    cout<<two<<endl;
+    getOld(one);
+    cout << one << endl;
+
+
+    cout<<"Assignment overload: "<<endl;
+    cout<<three<<" "<<three.getNickName()<<endl;
+    cout<<one<<" "<<one.getNickName()<<endl;
+
+    one.setNickName("Shorty");
+    cout<<three<<" "<<three.getNickName()<<endl;
+    cout<<one<<" "<<one.getNickName()<<endl;
+
+
+    delete personPtr;
+    delete personPtr2;
+    delete personPtr3;
+    //cout<< *personPtr << endl;
+
+
 
 
 

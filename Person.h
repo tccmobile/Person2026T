@@ -13,6 +13,7 @@ class Person {
     private:
      string name;
      int age;
+     char* nickName;
      bool isValidAge(int age);
      static int population;
     public:
@@ -20,10 +21,16 @@ class Person {
         int getAge();
         void setName(string name);
         void setAge(int age);
+        char* getNickName();
+        void setNickName(char* alias);
         void hasBirthday();
         Person();
         Person(string name, int age);
+        Person(string name, int age, char* alias);
+        Person(const Person& person);
+        ~Person();
         static int getPopulation();
+        Person& operator=(const Person& person);
 
      friend std::ostream & operator<<(std::ostream &os, const Person &obj) {
          return os
